@@ -21,7 +21,7 @@
     "networkd": {
 	"units": [{
 	    "name": "01-dhcp.network",
-	    "contents": "[Match]\nName=enp6s01\n\n[Network]\nDHCP=yes"
+	    "contents": "[Match]\nName=enp6s0\n\n[Network]\nDHCP=yes"
 	}]
     },
     "passwd": {
