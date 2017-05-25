@@ -33,7 +33,7 @@
     },
     "systemd": {
 	"units": [{
-	    "name": "sshd",
+	    "name": "sshd.service",
 	    "enable": true
 	}]
     },
