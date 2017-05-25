@@ -34,7 +34,7 @@
     "systemd": {
 	"units": [{
 	    "name": "sshd",
-	    "enable": true,
+	    "enable": true
 	}]
     },
     "networkd": {
