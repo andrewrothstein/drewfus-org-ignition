@@ -65,12 +65,12 @@
 		"contents": "[Match]\nName=enp3s0f1\n\n[Network]\nAddress=172.16.0.2/12\nGateway=172.16.0.1"
 	    },
 	    {
-		"name": "200-static-enp3s0f0.network",
+		"name": "200-static-enp4s0f0.network",
 		"contents": "[Match]\nName=enp4s0f0\n\n[Network]\nAddress=172.16.0.3/12\nGateway=172.16.0.1"
 	    },
 	    {
 		"name": "200-static-enp4s0f1.network",
-		"contents": "[Match]\nName=enp3s0f0\n\n[Network]\nAddress=172.16.0.4/12\nGateway=172.16.0.1"
+		"contents": "[Match]\nName=enp4s0f1\n\n[Network]\nAddress=172.16.0.4/12\nGateway=172.16.0.1"
 	    }
 	]
     }
