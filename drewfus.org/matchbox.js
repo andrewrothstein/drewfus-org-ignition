@@ -51,9 +51,27 @@
 	]
     },
     "networkd": {
-	"units": [{
-	    "name": "01-dhcp.network",
-	    "contents": "[Match]\nName=enp6s0\n\n[Network]\nDHCP=yes"
-	}]
+	"units": [
+	    {
+		"name": "100-dhcp-enp6s0.network",
+		"contents": "[Match]\nName=enp6s0\n\n[Network]\nDHCP=yes"
+	    },
+	    {
+		"name": "200-static-enp3s0f0.network",
+		"contents": "[Match]\nName=enp3s0f0\n\n[Network]\nAddress=172.16.0.1/12\nGateway=172.16.0.1"
+	    },
+	    {
+		"name": "200-static-enp3s0f1.network",
+		"contents": "[Match]\nName=enp3s0f1\n\n[Network]\nAddress=172.16.0.2/12\nGateway=172.16.0.1"
+	    },
+	    {
+		"name": "200-static-enp3s0f0.network",
+		"contents": "[Match]\nName=enp4s0f0\n\n[Network]\nAddress=172.16.0.3/12\nGateway=172.16.0.1"
+	    },
+	    {
+		"name": "200-static-enp4s0f1.network",
+		"contents": "[Match]\nName=enp3s0f0\n\n[Network]\nAddress=172.16.0.4/12\nGateway=172.16.0.1"
+	    }
+	]
     }
 }    
