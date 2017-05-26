@@ -17,25 +17,38 @@
 	],
 	"filesystems": [
 	    {
+		"name": "docker",
 		"mount": {
-		    "device": "/dev/disk/by-partlabel/DOCKER",
+		    "device": "/dev/sda",
 		    "format": "ext4",
 		    "create": {
-			"force": true,
-			"options": [
-			    "-L",
-			    "DOCKER"
-			]
+			"force": true
 		    }
 		}
 	    }
 	]
     },
     "systemd": {
-	"units": [{
-	    "name": "sshd.service",
-	    "enable": true
-	}]
+	"units": [
+	    {
+		"name": "sshd.service",
+		"enable": true
+	    },
+	    {
+		"name": "var-lib-docker.mount",
+		"enable": true,
+		"contents": "[Unit]\nDescription=Mount /dev/sda to /var/lib/docker\n\n[Mount]\nWhat=/dev/sda\nWhere=/var/lib/docker\nType=ext4\n[Install]\nWantedBy=multi-user.target\n"
+	    },
+	    {
+		"name": "docker.service",
+		"dropins": [
+		    {
+			"name": "10-wait-docker.conf",
+			"contents": "[Unit]\nAfter=var-lib-docker.mount\nRequires=var-lib-docker.mount"
+		    }
+		]
+	    }
+	]
     },
     "networkd": {
 	"units": [{
