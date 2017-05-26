@@ -7,7 +7,7 @@
 		"wipeTable": true,
 		"partitions": [
 		    {
-			"label": "ROOT",
+			"label": "DOCKER",
 			"number": 0,
 			"size": 0,
 			"start": 0
@@ -18,13 +18,13 @@
 	"filesystems": [
 	    {
 		"mount": {
-		    "device": "/dev/disk/by-partlabel/ROOT",
+		    "device": "/dev/disk/by-partlabel/DOCKER",
 		    "format": "ext4",
 		    "create": {
 			"force": true,
 			"options": [
 			    "-L",
-			    "ROOT"
+			    "DOCKER"
 			]
 		    }
 		}
