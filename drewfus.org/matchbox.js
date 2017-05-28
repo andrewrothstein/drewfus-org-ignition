@@ -53,12 +53,12 @@
     "networkd": {
 	"units": [
 	    {
-		"name": "100-dhcp-enp6s0.network",
-		"contents": "[Match]\nName=enp6s0\n\n[Network]\nDHCP=yes"
+		"name": "100-dhcp-enp3s0f0.network",
+		"contents": "[Match]\nName=enp3s0f\n\n[Network]\nDHCP=yes"
 	    },
 	    {
-		"name": "200-static-enp3s0f0.network",
-		"contents": "[Match]\nName=enp3s0f0\n\n[Network]\nAddress=172.16.0.1/12\n\n[Route]\nScope=link"
+		"name": "200-static-enp6s0.network",
+		"contents": "[Match]\nName=enp6s0\n\n[Network]\nAddress=172.16.0.1/12\n\n[Route]\nGateway=172.16.0.1\nScope=link"
 	    }
 	]
     }
